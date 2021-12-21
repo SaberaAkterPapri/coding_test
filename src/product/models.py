@@ -8,10 +8,14 @@ class Variant(models.Model):
     active = models.BooleanField(default=True)
 
 
+
+
 class Product(models.Model):
     title = models.CharField(max_length=255)
     sku = models.SlugField(max_length=255)
     description = models.TextField()
+
+
 
 
 class ProductImage(models.Model):
@@ -19,10 +23,13 @@ class ProductImage(models.Model):
     file_path = models.URLField()
 
 
+
 class ProductVariant(models.Model):
     variant_title = models.CharField(max_length=255)
     variant = models.ForeignKey(Variant, on_delete=models.CASCADE)
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
+
+
 
 
 class ProductVariantPrice(models.Model):
@@ -35,3 +42,5 @@ class ProductVariantPrice(models.Model):
     price = models.FloatField()
     stock = models.FloatField()
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
+
+

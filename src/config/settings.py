@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django_extensions',
     'rest_framework',
     'authentication',
-    'product'
+    'product',
+    'django_filters',
 ]
 
 MIDDLEWARE = [
@@ -75,10 +76,10 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
-'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'mydatabase',
-    }
+    'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': 'mydatabase',
+        }
     # 'default': {
     #     'ENGINE': f'django.db.backends.{os.getenv("DB_ENGINE", "mysql")}',
     #     'NAME': os.getenv('DB_NAME', 'django_test'),
@@ -129,6 +130,14 @@ STATICFILES_DIRS = [
 ]
 
 MEDIA_URL = '/media/'
+#
+# STATIC_URL = '/static/'
+# STATICFILES_DIRS = [
+#     os.path.join(BASE_DIR, 'static')
+# ]
+#
+# MEDIA_URL = '/images/'
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
